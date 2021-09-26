@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/homemdpi"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/hartmdpi"
+        android:title="Rooms" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/paymentmdpi"
+        android:title="Payments" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settingsmdpi"
+        android:title="Settings" />
+
+</menu>

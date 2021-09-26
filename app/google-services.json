@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "999498261309",
+    "firebase_url": "https://rdp-hotels-default-rtdb.firebaseio.com",
+    "project_id": "rdp-hotels",
+    "storage_bucket": "rdp-hotels.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999498261309:android:ef950967acced39efedb54",
+        "android_client_info": {
+          "package_name": "com.dinith.rdp_hotels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999498261309-5b0fts7ih6gqbviu81s071vp7r9t9qp3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARH04YfmuVKJpnGEl2C9ShG-La46bpzEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999498261309-5b0fts7ih6gqbviu81s071vp7r9t9qp3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
