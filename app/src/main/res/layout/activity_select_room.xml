@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.select_room">
+
+    <ImageView
+        android:id="@+id/setimg_url"
+        android:background="#ffb900"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:background="@drawable/back2mdpi"
+            android:layout_marginStart="20dp"
+            android:layout_height="40dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:background="@drawable/round_gb_white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginTop="350dp"
+        android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_marginTop="50dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/room_name"
+        android:layout_width="wrap_content"
+        android:text="Luxury  Room"
+        android:textSize="29dp"
+        android:fontFamily="@font/lacamedium"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:layout_marginTop="30dp"
+        android:id="@+id/room_type"
+        android:layout_width="wrap_content"
+        android:text="For  2 Adults"
+        android:textSize="15dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:text="Reviews"
+        android:textSize="25dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+    <RatingBar
+        android:id="@+id/rate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:numStars="5"
+        android:layout_marginEnd="6dp"
+        android:rating="3.5"
+
+        android:progressTint="@color/yellow"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/r_count"
+        android:layout_width="wrap_content"
+        android:text="out of 1940 reviews"
+        android:textSize="15dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:textColor="#000"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:text="LKR 18 500"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:text="Per night"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+</LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/btn_select_room"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="wrap_content"
+            android:background="@drawable/select_roommdpi"
+            android:layout_height="75dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

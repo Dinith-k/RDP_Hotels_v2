@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@mipmap/f_bg"
     android:layout_height="match_parent"
     tools:context=".ui.menu.menu">
 
@@ -12,6 +13,64 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:background="@drawable/back2mdpi"
+                android:layout_marginStart="20dp"
+                android:layout_height="40dp"
+                />
+
+
+
+            <ImageButton
+                android:id="@+id/profile"
+                android:layout_marginTop="-40dp"
+                android:textColor="#000"
+                android:layout_gravity="right"
+                android:textSize="20dp"
+                android:background="@mipmap/cartmdpi"
+                android:layout_width="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="50dp"
+                />
+
+            <TextView
+                android:id="@+id/cart_count"
+                android:layout_marginTop="-50dp"
+                android:textColor="#000"
+                android:layout_gravity="right"
+                android:textSize="18dp"
+               android:text="0"
+                android:fontFamily="@font/lacalite"
+                android:layout_width="50dp"
+                android:layout_marginEnd="-14dp"
+                android:layout_height="50dp"
+                />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_marginTop="-40dp"
+                android:textColor="#000"
+                android:textAlignment="center"
+                android:fontFamily="@font/acuminvariableconcept"
+                android:text="Select Food"
+                android:textSize="20dp"
+                android:layout_height="wrap_content"
+                />
+
+
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"

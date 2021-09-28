@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.room_customize">
+
+
+    <ImageView
+        android:id="@+id/setimg_url"
+        android:background="#ffb900"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:background="@drawable/back2mdpi"
+            android:layout_marginStart="20dp"
+            android:layout_height="40dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:background="@drawable/round_gb_white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginTop="150dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                custom:disable_date_color="#ABABAB"
+
+                custom:range_color="#fcd98b"
+                custom:selected_date_circle_color="@color/yellow"
+
+
+              >
+            </com.archit.calendardaterangepicker.customviews.DateRangeCalendarView>
+
+            <HorizontalScrollView
+                android:layout_marginTop="30dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fillViewport="true"
+                android:measureAllChildren="false"
+                android:scrollbars="none" >
+
+            <LinearLayout
+
+                android:id="@+id/innerLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/wifi1"
+                    android:layout_marginStart="40dp"
+
+                    android:layout_width="100dp"
+                    android:background="@drawable/wifi_dmdpi"
+                    android:layout_height="110dp"/>
+
+                <ImageButton
+                    android:id="@+id/gym1"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="100dp"
+                    android:background="@drawable/gym_dmdpi"
+                    android:layout_height="110dp"/>
+
+                <ImageButton
+                    android:id="@+id/food1"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="100dp"
+                    android:background="@drawable/f_dmdpi"
+                    android:layout_height="110dp"/>
+                <ImageButton
+                    android:id="@+id/tra1"
+                    android:layout_marginStart="40dp"
+                    android:layout_width="100dp"
+                    android:background="@drawable/tra_dmdpi"
+                    android:layout_height="110dp"/>
+
+
+            </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/btn_select_room"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="wrap_content"
+            android:background="@drawable/nextmdpi"
+            android:layout_height="70dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

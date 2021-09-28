@@ -30,7 +30,7 @@ ImageButton signin,signup;
 
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             getWindow().setStatusBarColor(ContextCompat.getColor(welcome.this,R.color.white));
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.organge));
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.yellow));
 
 
         }

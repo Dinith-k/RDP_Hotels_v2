@@ -72,24 +72,27 @@
                     android:orientation="horizontal" >
 
                     <ImageButton
+                        android:id="@+id/wifi"
                         android:layout_marginStart="40dp"
-
                         android:layout_width="100dp"
                         android:background="@drawable/wifi_dmdpi"
                         android:layout_height="110dp"/>
 
                     <ImageButton
+                        android:id="@+id/gym"
                         android:layout_marginStart="40dp"
                         android:layout_width="100dp"
                         android:background="@drawable/gym_dmdpi"
                         android:layout_height="110dp"/>
 
                     <ImageButton
+                        android:id="@+id/food"
                         android:layout_marginStart="40dp"
                         android:layout_width="100dp"
-                        android:background="@drawable/f_lmdpi"
+                        android:background="@drawable/f_dmdpi"
                         android:layout_height="110dp"/>
                     <ImageButton
+                        android:id="@+id/tranceport"
                         android:layout_marginStart="40dp"
                         android:layout_width="100dp"
                         android:background="@drawable/tra_dmdpi"

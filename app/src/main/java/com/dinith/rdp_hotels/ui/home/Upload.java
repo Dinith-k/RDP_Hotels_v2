@@ -6,23 +6,22 @@ public class  Upload {
     private String mName;
     private String mImageUrl;
     private String mKey;
-    private String Place;
-    private String mplceName;
-    private String place_name;
+    private String price;
+    private String rate;
     private String  Description;
-    private String NameOfPlace;
+    private String room_type;
 
     public Upload() {
     }
-    public Upload(String name, String imageUrl ,String place,String description,String place_name) {
+    public Upload(String name, String imageUrl,String description) {
         if (name.trim().equals("")) {
             name = "No Name";
         }
         mName = name;
         mImageUrl = imageUrl;
-        Place = place;
+
         Description = description;
-        NameOfPlace = place_name;
+
     }
     public String getDescription() {
         return Description;
@@ -58,7 +57,21 @@ public class  Upload {
     }
 
 
+    public String getKey() {
 
+            return mKey;
+    }
+    public String getrate() {
 
+        return rate;
+    }
+
+    public String getprice() {
+        return price;
+    }
+
+    public String getroom_type() {
+        return room_type;
+    }
 }
 
