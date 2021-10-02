@@ -1,20 +1,20 @@
 package com.dinith.rdp_hotels.ui.menu;
 
-public class cart {
-    private String quantity;
+public class Food {
+
+    private String name;
     private String image;
     private String desc;
     private String price;
     private String key;
+    public Food(){}
 
-    public cart(){}
-
-    public String getquantity() {
-        return quantity;
+    public String getname() {
+        return name;
     }
 
-    public void setquantity(String quantity) {
-        this.quantity = quantity;
+    public void setname(String name) {
+        this.name = name;
     }
 
     public String getkey() {
@@ -49,5 +49,10 @@ public class cart {
     public void setprice(String price) {
         this.price = price;
     }
+
+
+
+
+
 
 }

@@ -73,12 +73,25 @@
 
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+<EditText
+    android:layout_marginTop="60dp"
+    android:layout_marginStart="30dp"
+    android:hint="search here"
+    android:id="@+id/searchtext"
+    android:layout_marginEnd="30dp"
+    android:textAlignment="center"
+    android:background="@drawable/edittext_bg"
+    android:backgroundTint="#F9D38F"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"/>
+
 
             <TextView
+                android:layout_marginTop="50dp"
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:text="categories"
@@ -116,25 +129,22 @@
                     android:layout_marginStart="40dp"
 
                     android:layout_width="100dp"
-                    android:background="@drawable/wifi_dmdpi"
-                    android:layout_height="110dp"/>
+                    android:background="@drawable/noodlesmdpi"
+                    android:layout_height="120dp"/>
 
                 <ImageButton
                     android:layout_marginStart="40dp"
                     android:layout_width="100dp"
-                    android:background="@drawable/gym_dmdpi"
-                    android:layout_height="110dp"/>
+                    android:background="@drawable/pizzamdpi"
+                    android:layout_height="120dp"/>
+
 
                 <ImageButton
                     android:layout_marginStart="40dp"
                     android:layout_width="100dp"
-                    android:background="@drawable/f_lmdpi"
-                    android:layout_height="110dp"/>
-                <ImageButton
-                    android:layout_marginStart="40dp"
-                    android:layout_width="100dp"
-                    android:background="@drawable/tra_dmdpi"
-                    android:layout_height="110dp"/>
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/drinksmdpi"
+                    android:layout_height="120dp"/>
 
 
             </LinearLayout>
@@ -157,9 +167,9 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:visibility="visible"
-            android:layout_marginTop="50dp"
             android:id="@+id/food_view"
             android:layout_width="match_parent"
+            android:layout_marginBottom="50dp"
             android:layout_height="match_parent"/>
 
 
@@ -167,6 +177,7 @@
     </LinearLayout>
 
     <ProgressBar
+
         android:layout_gravity="center"
         android:id="@+id/progress2"
         android:layout_width="wrap_content"

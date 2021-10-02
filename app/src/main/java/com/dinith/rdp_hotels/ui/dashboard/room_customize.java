@@ -2,6 +2,7 @@ package com.dinith.rdp_hotels.ui.dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,9 @@ import com.archit.calendardaterangepicker.customviews.CalendarListener;
 import com.archit.calendardaterangepicker.customviews.DateRangeCalendarView;
 import com.dinith.rdp_hotels.R;
 import com.dinith.rdp_hotels.login.sotre_data;
+import com.dinith.rdp_hotels.login.welcome;
 import com.dinith.rdp_hotels.ui.home.Upload;
+import com.dinith.rdp_hotels.ui.menu.menu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -158,6 +161,11 @@ if(Transport==1){
                     room_data.setstart_date(s_date);
                     room_data.setend_date(e_date);
                     reference.child(user.getUid()).setValue(room_data);
+
+                    Intent intent = new Intent(getApplication(), menu.class);
+                    startActivity(intent);
+                    finish();
+
 
                 }
             }

@@ -1,17 +1,22 @@
 package com.dinith.rdp_hotels.ui.menu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dinith.rdp_hotels.MainActivity;
 import com.dinith.rdp_hotels.R;
+import com.dinith.rdp_hotels.ui.dashboard.select_room;
 import com.dinith.rdp_hotels.ui.home.ImageAdapter;
 import com.dinith.rdp_hotels.ui.home.Upload;
 import com.squareup.picasso.Picasso;
@@ -20,17 +25,17 @@ import java.util.List;
 
 public class foodAdapter extends RecyclerView.Adapter<foodAdapter.ImageViewHolder> {
     private Context mContext;
-    private List<Upload> mUploads;
+    private List<Food> mUploads;
     private foodAdapter.OnItemClickListener mListener;
 
-    public foodAdapter(Context context, List<Upload> uploads) {
+    public foodAdapter(Context context, List<Food> uploads) {
         mContext = context;
         mUploads = uploads;
     }
 
     @Override
     public foodAdapter.ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.roomview, parent, false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.food_view, parent, false);
         return new foodAdapter.ImageViewHolder(v);
     }
 
@@ -38,14 +43,15 @@ public class foodAdapter extends RecyclerView.Adapter<foodAdapter.ImageViewHolde
     public void onBindViewHolder(foodAdapter.ImageViewHolder holder, int position) {
 
 
-        Upload uploadCurrent = mUploads.get(position);
+        Food uploadCurrent = mUploads.get(position);
 
         //  String palce_name = uploadCurrent.getNameOfPlace();
 
 
         // holder.textViewName.setText(palce_name);
+        holder.S_key.setText(String.valueOf(position));
         Picasso.get()
-                .load(uploadCurrent.getImageUrl())
+                .load(uploadCurrent.getimage())
                 .placeholder(R.mipmap.ic_launcher)
                 .fit()
                 .centerCrop()
@@ -61,15 +67,38 @@ public class foodAdapter extends RecyclerView.Adapter<foodAdapter.ImageViewHolde
 
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
-        public TextView textViewName;
+        public TextView textViewName,S_key;
         public ImageView imageView;
+        public Button add_cart;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.text);
-            imageView = itemView.findViewById(R.id.imageview);
+            S_key= itemView.findViewById(R.id.S_key);
+            add_cart = itemView.findViewById(R.id.add_cart);
+            textViewName = itemView.findViewById(R.id.title);
+            imageView = itemView.findViewById(R.id.image_v);
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
+
+            add_cart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+
+                   Food uploadCurrent = mUploads.get(Integer.parseInt(S_key.getText().toString()));
+                    Intent intent = new Intent(mContext, view_food.class);
+                    intent.putExtra("key",uploadCurrent.getkey());
+                    intent.putExtra("img",uploadCurrent.getimage());
+                    intent.putExtra("desc",uploadCurrent.getdesc());
+                    intent.putExtra("name",uploadCurrent.getname());
+                    intent.putExtra("price",uploadCurrent.getprice());
+                    mContext.startActivity(intent);
+
+
+
+                }
+            });
         }
 
         @Override
