@@ -1,13 +1,21 @@
 package com.dinith.rdp_hotels.ui.menu;
 
 public class Food {
-
+    private String quantity;
     private String name;
     private String image;
     private String desc;
     private String price;
     private String key;
     public Food(){}
+
+    public String getquantity() {
+        return quantity;
+    }
+
+    public void setquantity(String quantity) {
+        this.quantity = quantity;
+    }
 
     public String getname() {
         return name;

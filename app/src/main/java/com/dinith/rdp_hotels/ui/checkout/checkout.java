@@ -1,11 +1,19 @@
 package com.dinith.rdp_hotels.ui.checkout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,16 +41,20 @@ ImageView imageview;
     private DatabaseReference f_DatabaseRef,c_DatabaseRef,cart_DatabaseRef;
     private ValueEventListener f_DBListener,c_DBListener,cart_DBListener;
     String room_key,start_d,end_d,img,title,desc,price,total;
-    TextView r_title,Desc,r_price,time_f,date_count,set_total;
+    TextView r_title,Desc,r_price,time_f,date_count,set_total,set_toal;
     RecyclerView food_view;
+    ImageButton checkout_btn;
     private List<Food> f_Uploads;
     private checkoutAdapter f_Adapter;
     int dateDifference;
+    int item_tot = 0;
+    int toal;
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+         user = FirebaseAuth.getInstance().getCurrentUser();
 
         imageview = (ImageView)findViewById(R.id.imageview);
         r_title= (TextView)findViewById(R.id.r_title);
@@ -51,13 +63,28 @@ ImageView imageview;
         time_f= (TextView)findViewById(R.id.time_f);
         date_count= (TextView)findViewById(R.id.date_count);
         set_total= (TextView)findViewById(R.id.set_total);
-        food_view= (RecyclerView)findViewById(R.id.food_view);
-
-
         f_Uploads = new ArrayList<>();
         f_Adapter = new checkoutAdapter(checkout.this, f_Uploads);
+        food_view= (RecyclerView)findViewById(R.id.food_view);
+        food_view.setHasFixedSize(true);
+        food_view.setLayoutManager(new LinearLayoutManager(checkout.this));
+        food_view.setAdapter(f_Adapter);
+        food_view.setLayoutManager(new GridLayoutManager(checkout.this, 1));
+        set_toal= (TextView)findViewById(R.id.set_toal);
+
+        checkout_btn= (ImageButton)findViewById(R.id.checkout_btn);
+
+        checkout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+                new IntentFilter("custom-message"));
 
         //////room.//////
 
@@ -107,8 +134,11 @@ if(dataSnapshot.exists()){
                         prce_l = prce_l.replaceAll("[^-?0-9]+", "");
                         prce_l = prce_l.replaceAll(" ", "");
 
-                        int toal = Integer.valueOf(prce_l)*dateDifference;
+                         toal = Integer.valueOf(prce_l)*dateDifference;
                         set_total.setText("Total "+String.valueOf(toal));
+
+final_tot();
+
 
                     }
                     @Override
@@ -140,18 +170,19 @@ if(dataSnapshot.exists()){
 /////////////end room//////
 
 
-
+        cart_DatabaseRef = FirebaseDatabase.getInstance().getReference("users").child(user.getUid().toString()).child("cart");
         cart_DBListener = cart_DatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 f_Uploads.clear();
+
+                item_tot = 0;
 
 
                 for (DataSnapshot foods : dataSnapshot.getChildren()) {
 
 
                     Food upload = foods.getValue(Food.class);
-                    upload.setkey(foods.getKey());
                     f_Uploads.add(upload);
 
 
@@ -173,9 +204,14 @@ if(dataSnapshot.exists()){
 
     }
 
+    private void final_tot() {
+
+        int cal = item_tot+toal;
+        set_toal.setText(String.valueOf(cal));
+    }
 
 
-        public static long getDateDiff(SimpleDateFormat format, String oldDate, String newDate) {
+    public static long getDateDiff(SimpleDateFormat format, String oldDate, String newDate) {
             try {
                 return TimeUnit.DAYS.convert(format.parse(newDate).getTime() - format.parse(oldDate).getTime(), TimeUnit.MILLISECONDS);
             } catch (Exception e) {
@@ -184,5 +220,20 @@ if(dataSnapshot.exists()){
             }
         }
 
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
 
+            String tot = intent.getStringExtra("total");
+            int convert_tot = Integer.parseInt(tot);
+
+
+            item_tot = item_tot+convert_tot;
+
+            Toast.makeText(checkout.this,item_tot+"test",Toast.LENGTH_SHORT).show();
+
+            final_tot();
+
+        }
+    };
 }

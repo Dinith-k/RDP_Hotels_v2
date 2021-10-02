@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RDP_Hotels">
-        <activity android:name=".ui.checkout.checkout"></activity>
+        <activity android:name=".ui.qr.before_qr"></activity>
+        <activity android:name=".ui.checkout.checkout" />
         <activity android:name=".ui.menu.view_food" />
         <activity android:name=".ui.dashboard.room_customize" />
         <activity android:name=".ui.dashboard.select_room" />

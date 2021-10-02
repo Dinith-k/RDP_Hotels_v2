@@ -89,6 +89,7 @@ EditText qunt;
         nm = FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).child("cart").child(key);
 
         listData.setprice(price);
+        listData.setname(name);
         listData.setimage(img);
         listData.setdesc(desc);
         listData.setquantity(value);
