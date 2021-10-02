@@ -31,7 +31,7 @@
 
 
             <ImageButton
-                android:id="@+id/profile"
+                android:id="@+id/cart_img"
                 android:layout_marginTop="-40dp"
                 android:textColor="#000"
                 android:layout_gravity="right"

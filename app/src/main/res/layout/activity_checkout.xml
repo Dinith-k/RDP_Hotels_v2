@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffb900"
+    android:layout_height="match_parent"
+    tools:context=".ui.checkout.checkout">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:background="@drawable/back2mdpi"
+        android:layout_marginStart="20dp"
+        android:layout_height="40dp"
+        />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_marginTop="-40dp"
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:fontFamily="@font/acuminvariableconcept"
+            android:text="Checkout"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:background="@drawable/round_gb_white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:background="@drawable/round_liner"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/round_liner"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/imageview"
+                android:layout_width="165dp"
+                android:layout_height="120dp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/time_f"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:text="2021/06/12 - 2021/06/18"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/acuminvariableconcept"
+                    android:textColor="#000"
+
+                    android:layout_height="wrap_content"/>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+
+                <TextView
+android:id="@+id/set_total"
+                    android:layout_width="match_parent"
+                    android:text="Total 129,500"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/acuminvariableconcept"
+                    android:textAlignment="viewEnd"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:text="Room"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:text="Room"
+        android:layout_marginTop="-25dp"
+        android:id="@+id/r_title"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:layout_marginEnd="120dp"
+        android:textAlignment="viewEnd"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:layout_width="match_parent"
+  android:id="@+id/r_price"
+        android:text="16 500"
+        android:layout_marginTop="-25dp"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:layout_marginEnd="0dp"
+        android:textAlignment="viewEnd"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:id="@+id/Desc"
+        android:layout_marginTop="10dp"
+        android:text="For 2 Adults"
+        android:textSize="15dp"
+        android:fontFamily="@font/acuminvariableconcept"
+        android:layout_marginStart="190dp"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <LinearLayout
+        android:background="@drawable/r_bg_update"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:padding="3dp"
+        android:layout_marginStart="190dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:text="Days : "
+            android:textSize="15dp"
+            android:fontFamily="@font/acuminvariableconcept"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+android:id="@+id/date_count"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:textSize="15dp"
+            android:fontFamily="@font/acuminvariableconcept"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_marginTop="240dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/linemdpi"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="240dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/food_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="-150dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_height="150dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:text="Total"
+                    android:textColor="#000"
+                    android:gravity="center"
+
+                    android:textSize="28dp"
+                    android:fontFamily="@font/acuminvariableconcept"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:text="135,000"
+                    android:id="@+id/set_toal"
+                    android:textColor="#000"
+                    android:textAlignment="viewEnd"
+                    android:textSize="28dp"
+                    android:fontFamily="@font/acuminvariableconcept"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageButton
+                    android:id="@+id/checkout_btn"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/checkoutmdpi"
+                    android:layout_height="80dp"/>
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
