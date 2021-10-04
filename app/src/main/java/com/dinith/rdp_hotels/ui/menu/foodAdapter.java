@@ -49,7 +49,11 @@ public class foodAdapter extends RecyclerView.Adapter<foodAdapter.ImageViewHolde
 
 
         // holder.textViewName.setText(palce_name);
+        holder.title.setText(uploadCurrent.getname());
+        holder.desc_.setText(uploadCurrent.getdesc());
+
         holder.S_key.setText(String.valueOf(position));
+        holder.price.setText(uploadCurrent.getprice().toString());
         Picasso.get()
                 .load(uploadCurrent.getimage())
                 .placeholder(R.mipmap.ic_launcher)
@@ -67,12 +71,15 @@ public class foodAdapter extends RecyclerView.Adapter<foodAdapter.ImageViewHolde
 
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
-        public TextView textViewName,S_key;
+        public TextView textViewName,S_key,price,title,desc_;
         public ImageView imageView;
         public Button add_cart;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
+            desc_= itemView.findViewById(R.id.desc_);
+            title= itemView.findViewById(R.id.title);
+            price= itemView.findViewById(R.id.price);
             S_key= itemView.findViewById(R.id.S_key);
             add_cart = itemView.findViewById(R.id.add_cart);
             textViewName = itemView.findViewById(R.id.title);

@@ -14,6 +14,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:textColor="#000"
             android:text="Hello ,Jane"
@@ -23,7 +24,7 @@
 
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/profile"
             android:layout_marginTop="-20dp"
             android:text="Sign In"

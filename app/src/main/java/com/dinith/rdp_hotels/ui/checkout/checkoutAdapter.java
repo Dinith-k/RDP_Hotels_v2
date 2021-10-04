@@ -161,7 +161,7 @@ public class checkoutAdapter extends RecyclerView.Adapter<checkoutAdapter.ImageV
                   // parent.getItemAtPosition(position).toString();
 
 
-                    Toast.makeText(mContext,parent.getItemAtPosition(position).toString(),Toast.LENGTH_SHORT).show();
+
 
 if(parent.getItemAtPosition(position).toString().equals("select")){
 

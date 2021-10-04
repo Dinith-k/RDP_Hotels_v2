@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 import com.dinith.rdp_hotels.MainActivity;
 import com.dinith.rdp_hotels.R;
+import com.dinith.rdp_hotels.ui.admin.rooms;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -42,9 +43,18 @@ public class splash_s extends AppCompatActivity {
     private void checklogin() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            Intent intent = new Intent(getApplication(), MainActivity.class);
-            startActivity(intent);
-            finish();
+
+            if(user.getEmail().equals("admin@gmail.com")){
+                Intent intent = new Intent(getApplication(), rooms.class);
+                startActivity(intent);
+                finish();
+            }else {
+                Intent intent = new Intent(getApplication(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+
         }else {
             Intent intent = new Intent(getApplication(), welcome.class);
             startActivity(intent);

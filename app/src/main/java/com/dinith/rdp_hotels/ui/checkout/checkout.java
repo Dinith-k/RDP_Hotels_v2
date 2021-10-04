@@ -18,10 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dinith.rdp_hotels.MainActivity;
 import com.dinith.rdp_hotels.R;
 import com.dinith.rdp_hotels.ui.menu.Food;
 import com.dinith.rdp_hotels.ui.menu.foodAdapter;
 import com.dinith.rdp_hotels.ui.menu.menu;
+import com.dinith.rdp_hotels.ui.qr.before_qr;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -74,12 +76,6 @@ ImageView imageview;
 
         checkout_btn= (ImageButton)findViewById(R.id.checkout_btn);
 
-        checkout_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
 
 
@@ -198,6 +194,19 @@ final_tot();
         });
 
 
+        checkout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplication(), before_qr.class);
+                intent.putExtra("room_tot",String.valueOf(toal));
+                intent.putExtra("menu_tot",String.valueOf(item_tot));
+                intent.putExtra("date",String.valueOf(start_d+"-"+end_d));
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
 
@@ -208,6 +217,8 @@ final_tot();
 
         int cal = item_tot+toal;
         set_toal.setText(String.valueOf(cal));
+
+
     }
 
 
@@ -230,9 +241,11 @@ final_tot();
 
             item_tot = item_tot+convert_tot;
 
-            Toast.makeText(checkout.this,item_tot+"test",Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(checkout.this,item_tot+"test",Toast.LENGTH_SHORT).show();
 
             final_tot();
+
+
 
         }
     };
