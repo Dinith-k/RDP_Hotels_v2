@@ -80,6 +80,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/reservation"
                     android:background="@drawable/reservationmdpi"
                     android:layout_marginEnd="30dp"
                     android:layout_width="150dp"
@@ -87,6 +88,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/menu"
                     android:background="@drawable/menumdpi"
                     android:layout_marginStart="30dp"
                     android:layout_width="150dp"
@@ -105,6 +107,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/checkin"
                     android:background="@drawable/check_inmdpi"
                     android:layout_marginEnd="30dp"
                     android:layout_width="150dp"
@@ -112,6 +115,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/checkout"
                     android:background="@drawable/check_outmdpi"
                     android:layout_marginStart="30dp"
                     android:layout_width="150dp"
